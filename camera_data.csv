@@ -1,0 +1,5 @@
+ring_ID,Week_Day,Month_Date,Month,Year,Time,Doorbot_Description,Kind,Detection_Type
+6980204592070659000,Thu,01,Jul,2021,22:58:49,Front Door,motion,human
+6980206009409867000,Thu,01,Jul,2021,23:04:20,Front Door,motion,human
+6980207431044042000,Thu,01,Jul,2021,23:09:50,Front Door,motion,human
+6980211244975001000,Thu,01,Jul,2021,23:24:39,Front Door,motion,other_motion

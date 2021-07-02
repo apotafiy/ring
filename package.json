@@ -1,0 +1,23 @@
+{
+  "name": "ring",
+  "version": "1.0.0",
+  "description": "ring data visualization project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apotafiy/ring.git"
+  },
+  "author": "Artem Potafiy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apotafiy/ring/issues"
+  },
+  "homepage": "https://github.com/apotafiy/ring#readme",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "dotenv": "^10.0.0"
+  }
+}
