@@ -55,40 +55,6 @@ function DingData(ding) {
   };
 }
 
-// async function addToCSV() {
-//   try {
-//     const cameras = await ringApi.getCameras();
-//     const frontCam = cameras[1];
-
-//     const csvWriter = createCsvWriter({
-//       path: "./file.csv",
-//       header: [
-//         { id: "ring_ID", title: "ring_ID" },
-//         { id: "Week_Day", title: "Week_Day" },
-//         { id: "Month_Date", title: "Month_Date" },
-//         { id: "Month", title: "Month" },
-//         { id: "Year", title: "Year" },
-//         { id: "Time", title: "Time" },
-//         { id: "Doorbot_Description", title: "Doorbot_Description" },
-//         { id: "Kind", title: "Kind" },
-//         { id: "Detection_Type", title: "Detection_Type" },
-//       ],
-//     });
-//     frontCam.onNewDing.subscribe(async (ding) => {
-//       const data = DingData(ding);
-//       try {
-//         await csvWriter.writeRecords([data]);
-//       } catch (e) {
-//         console.error(e);
-//       }
-//       console.log(data);
-//     });
-//     console.log("...Running");
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-
 async function addToCSV() {
   try {
     const cameras = await ringApi.getCameras();
@@ -121,5 +87,3 @@ function dingDataToCVS(dd) {
 }
 
 addToCSV();
-
-module.exports = { DingData };
