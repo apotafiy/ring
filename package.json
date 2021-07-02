@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/apotafiy/ring#readme",
   "dependencies": {
-    "csv-writer": "^1.6.0",
     "dotenv": "^10.0.0"
   }
 }
