@@ -391,3 +391,17 @@ ring_ID,Week_Day,Month_Date,Month,Year,Time,Doorbot_Description,Kind,Detection_T
 6981495547570687000,Mon,05,Jul,2021,10:28:23,Front Door,motion,human
 6981496419449048000,Mon,05,Jul,2021,10:31:46,Front Door,motion,human
 6981504476807695000,Mon,05,Jul,2021,11:03:02,Front Door,motion,human
+6981527850019720000,Mon,05,Jul,2021,12:33:45,Front Door,motion,human
+6981530100582583000,Mon,05,Jul,2021,12:42:30,Front Door,motion,human
+6981530401230294000,Mon,05,Jul,2021,12:43:38,Front Door,motion,human
+6981533184369102000,Mon,05,Jul,2021,12:54:26,Front Door,motion,human
+6981534709082492000,Mon,05,Jul,2021,13:00:22,Front Door,motion,human
+6981541340511997000,Mon,05,Jul,2021,13:26:05,Front Door,motion,human
+6981541696994282000,Mon,05,Jul,2021,13:27:29,Front Door,motion,other_motion
+6981547254681964000,Mon,05,Jul,2021,13:49:03,Front Door,motion,other_motion
+6981547928991829000,Mon,05,Jul,2021,13:51:39,Front Door,motion,human
+6981548392848297000,Mon,05,Jul,2021,13:53:27,Front Door,motion,other_motion
+6981550557511814000,Mon,05,Jul,2021,14:01:52,Front Door,motion,other_motion
+6981552296973569000,Mon,05,Jul,2021,14:08:36,Front Door,motion,human
+6981552619096116000,Mon,05,Jul,2021,14:09:53,Front Door,motion,human
+6981553121607290000,Mon,05,Jul,2021,14:11:47,Front Door,motion,other_motion
