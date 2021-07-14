@@ -1157,3 +1157,10 @@ ring_ID,Week_Day,Month_Date,Month,Year,Time,Doorbot_Description,Kind,Detection_T
 6984855667990072000,Wed,14,Jul,2021,11:47:24,Front Door,motion,human
 6984875759847083000,Wed,14,Jul,2021,13:05:22,Front Door,motion,human
 6984877542258511000,Wed,14,Jul,2021,13:12:16,Front Door,motion,other_motion
+6984889890289487000,Wed,14,Jul,2021,14:00:10,Front Door,motion,other_motion
+6984890482994974000,Wed,14,Jul,2021,14:02:30,Front Door,motion,human
+6984900116606619000,Wed,14,Jul,2021,14:39:52,Front Door,motion,other_motion
+6984905128833453000,Wed,14,Jul,2021,14:59:19,Front Door,motion,human
+6984912121040211000,Wed,14,Jul,2021,15:26:27,Front Door,motion,other_motion
+6984912756695371000,Wed,14,Jul,2021,15:28:55,Front Door,motion,human
+6984917794692009000,Wed,14,Jul,2021,15:48:27,Front Door,motion,human
