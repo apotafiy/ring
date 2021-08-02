@@ -1,11 +1,13 @@
 "use strict";
+//const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 require("dotenv").config();
 const fs = require("fs");
 
 const api = require("ring-client-api");
-const { RingApi } = api;
+const { RingApi, RingDeviceType } = api;
 const ringApi = new RingApi({
   refreshToken: process.env.RING_REFRESH_TOKEN,
+
   cameraStatusPollingSeconds: 20,
   cameraDingsPollingSeconds: 2,
 });
