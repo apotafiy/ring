@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/apotafiy/ring#readme",
   "dependencies": {
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "ring-client-api": "^9.18.1"
   }
 }
