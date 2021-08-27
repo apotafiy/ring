@@ -157,10 +157,36 @@ function motionsToDay(motions) {
 async function createHourly(motions) {
   try {
     const hours = motionsToHourly(motions);
-    const labels = [];
-    for (let i = 0; i < 24; i++) {
-      labels[i] = i;
-    }
+    // const labels = [];
+    // for (let i = 0; i < 24; i++) {
+    //   labels[i] = i;
+    // }
+    const labels = [
+      "12am",
+      "1am",
+      "2am",
+      "3am",
+      "4am",
+      "5am",
+      "6am",
+      "7am",
+      "8am",
+      "9am",
+      "10am",
+      "11am",
+      "12pm",
+      "1pm",
+      "2pm",
+      "3pm",
+      "4pm",
+      "5pm",
+      "6pm",
+      "7pm",
+      "8pm",
+      "9pm",
+      "10pm",
+      "11pm",
+    ];
     const data = [];
     hours.forEach((hour, i) => {
       // optionaly do average rather than total
@@ -259,7 +285,7 @@ async function createDaily(motions) {
       data: {
         datasets: [
           {
-            label: "Daily Motion Detections",
+            label: "Daily Total Motion Detections",
             data: data,
             backgroundColor: [RING_BLUE_TRAN],
             borderColor: [RING_BLUE_SOLID],
@@ -295,3 +321,6 @@ async function createCharts() {
 createCharts();
 
 // add section for average motions per, hour, per day, per week, and per month
+// total motions. what portion of motions had human detection
+// maybe have a seperate chart just for human detected motion or make a button that changes from all motion to
+// just human motion. accompanied by a color change
