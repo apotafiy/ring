@@ -73,57 +73,62 @@ Week.monday = [];
 */
 function motionsToWeekday(motions) {
   const week = {
-    sunday: [],
-    monday: [],
-    tuesday: [],
-    wednesday: [],
-    thursday: [],
-    friday: [],
-    saturday: [],
+    Sun: [],
+    Mon: [],
+    Tue: [],
+    Wed: [],
+    Thu: [],
+    Fri: [],
+    Sat: [],
   };
   motions.forEach((motion) => {
-    switch (motion.Week_Day) {
-      case "Sun":
-        week.sunday.push(motion);
-        break;
-      case "Mon":
-        week.monday.push(motion);
-        break;
-      case "Tue":
-        week.tuesday.push(motion);
-        break;
-      case "Wed":
-        week.wednesday.push(motion);
-        break;
-      case "Thu":
-        week.thursday.push(motion);
-        break;
-      case "Fri":
-        week.friday.push(motion);
-        break;
-      case "Sat":
-        week.saturday.push(motion);
-        break;
-      default:
-        break;
-    }
+    week[motion.Week_Day].push(motion);
   });
   return week;
 }
 
-/*
-Put motions into an obj for each month where
-Month.june = [];
-*/
-function motionsToMonth() {}
+function motionsToMonth(motions) {
+  const months = {
+    Jan: [], // some of these month abreviations may be wrong. double check them.
+    Feb: [],
+    Mar: [],
+    Apr: [],
+    May: [],
+    Jun: [],
+    Jul: [],
+    Aug: [],
+    Sep: [],
+    Oct: [],
+    Nov: [],
+    Dec: [],
+  };
+  motions.forEach((motion) => {
+    months[motion.Month].push(motion);
+  });
+  return months;
+}
+
+function motionsToYear(motions) {
+  const years = {};
+  motions.forEach((motion) => {
+    if (years[motion.Year]) {
+      years[motion.Year].push(motion);
+    } else {
+      years[motion.Year] = [motion];
+    }
+  });
+  return years;
+}
 
 /*
-Put motions into an array for the year
-Not sure what the best way to do this.
-How would you programmatically add a new year as it occurs.
-Having a sparse array is a bad idea
+Divide motions into seperate days.
+Each day will be with an associated key in an object.
+The key will be some sort of string created from year,day,month.
+May need to divide into years first and do them seperately so it doenst get confused.
+new Date().toDateString() returns "Thu Aug 26 2021" format. Use this.
+
+Maybe serpate year into months. Then sort each month by date. Then rejoin arrays after sort.
 */
-function motionsToYear() {}
 
 async function createHourly(motions) {
   try {
@@ -171,16 +176,15 @@ async function createHourly(motions) {
 }
 async function createWeekly(motions) {
   try {
-    const { sunday, monday, tuesday, wednesday, thursday, friday, saturday } =
-      motionsToWeekday(motions);
+    const { Sun, Mon, Tue, Wed, Thu, Fri, Sat } = motionsToWeekday(motions);
     const data = {
-      Sunday: sunday.length,
-      Monday: monday.length,
-      Tuesday: tuesday.length,
-      Wednesday: wednesday.length,
-      Thursday: thursday.length,
-      Friday: friday.length,
-      Saturday: saturday.length,
+      Sunday: Sun.length,
+      Monday: Mon.length,
+      Tuesday: Tue.length,
+      Wednesday: Wed.length,
+      Thursday: Thu.length,
+      Friday: Fri.length,
+      Saturday: Sat.length,
     };
 
     const ctx = document.getElementById("weeklyChart").getContext("2d");
