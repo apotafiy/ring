@@ -1,6 +1,4 @@
 ("use strict");
-// DON'T FORGET THIS ISNT IN NODE.JS
-
 const RING_BLUE_SOLID = "rgb(25,152,213,1)";
 const RING_BLUE_TRAN = "rgb(25,152,213,0.5)";
 const DAYS = 50;
@@ -32,19 +30,11 @@ function monthToInt(month) {
 }
 
 async function getCSV() {
-  // let response = await fetch(
-  //   "https://apotafiy.github.io/ring/data-collection/camera-data.csv"
-  // );
-  //if (response.status == 404) {
-  let response = await fetch("./data-collection/camera_data.csv");
-  //}
+  const response = await fetch("./data-collection/camera_data.csv");
   const csv = await response.text();
   return csv;
 }
 
-/*
-Each row will be an motion object
-*/
 function csvToArray(csv) {
   // last line is just an empty line so need to ignore
   //first line is header so also ignore
@@ -89,9 +79,6 @@ function csvToArray(csv) {
   return motions;
 }
 
-/*
-Put motions into an 2d array of length 24
-*/
 function motionsToHourly(motions) {
   const hours = [];
   for (let i = 0; i < 24; i++) {
@@ -103,10 +90,6 @@ function motionsToHourly(motions) {
   return hours;
 }
 
-/*
-Put motions into an obj for each week day where
-Week.monday = [];
-*/
 function motionsToWeekday(motions) {
   const week = {
     Sun: [],
@@ -156,15 +139,6 @@ function motionsToYear(motions) {
   return years;
 }
 
-/*
-Divide motions into seperate days in chronological order.
-Each day will be with an associated key in an object.
-The key will be some sort of string created from year,day,month.
-May need to divide into years first and do them seperately so it doenst get confused.
-Maybe key will be like `${Year} ${Month} ${Day}` like '2021 08 26'
-
-Maybe serpate year into months. Then sort each month by date. Then rejoin arrays after sort.
-*/
 function motionsToDay(motions) {
   const days = {};
   motions.forEach((motion) => {
@@ -178,11 +152,6 @@ function motionsToDay(motions) {
     }
   });
   return days;
-  //   motions.sort((a, b) => {
-  //     const aa = `${a.Year} ${monthToInt(a.Month)} ${a.Month_Date}`;
-  //     const bb = `${b.Year} ${monthToInt(b.Month)} ${b.Month_Date}`;
-  //     return aa > bb ? 1 : bb > aa ? -1 : 0;
-  //   });
 }
 
 async function createHourly(motions) {
@@ -315,8 +284,6 @@ async function createCharts() {
   try {
     const csv = await getCSV();
     const motions = csvToArray(csv);
-    //console.log(motions);
-    //console.log(motionsToDay(motions));
     createHourly(motions);
     createWeekly(motions);
     createDaily(motions);
@@ -326,3 +293,5 @@ async function createCharts() {
 }
 
 createCharts();
+
+// add section for average motions per, hour, per day, per week, and per month
