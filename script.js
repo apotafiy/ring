@@ -32,7 +32,12 @@ function monthToInt(month) {
 }
 
 async function getCSV() {
-  const response = await fetch("/data-collection/camera_data.csv");
+  // let response = await fetch(
+  //   "https://apotafiy.github.io/ring/data-collection/camera-data.csv"
+  // );
+  //if (response.status == 404) {
+  let response = await fetch("./data-collection/camera_data.csv");
+  //}
   const csv = await response.text();
   return csv;
 }
